@@ -1,0 +1,31 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.annotations.LoadMemoryAnnotation",
+    "target":"MEM.MEM.mem",
+    "fileName":"src/loong/loong_mem.hex",
+    "hexOrBinary":"h",
+    "originalMemoryNameOpt":"mem"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"verilog"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~MEM|MEM>io_wRegData_MEM",
+    "sources":[
+      "~MEM|MEM>io_wRegDataSrc_ctrl_uMEM_MEM",
+      "~MEM|MEM>io_aluResult_MEM"
+    ]
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"MEM.MEM",
+    "name":"MEM.MEM.mem.v",
+    "text":"module BindsTo_0_MEM(\n  input         clock,\n  input         reset,\n  input  [31:0] io_aluResult_MEM,\n  input  [31:0] io_wMemData_MEM,\n  input         io_weMEM_ctrl_uMEM_MEM,\n  input         io_wRegDataSrc_ctrl_uMEM_MEM,\n  input  [1:0]  io_wrMemByteSelScr_ctrl_uMEM_MEM,\n  input         io_memReadDataExt_ctrl_uMEM_MEM,\n  input         io_reset,\n  output [31:0] io_wRegData_MEM\n);\n\ninitial begin\n  $readmemh(\"src/loong/loong_mem.hex\", MEM.mem);\nend\n                      endmodule\n\nbind MEM BindsTo_0_MEM BindsTo_0_MEM_Inst(.*);"
+  }
+]

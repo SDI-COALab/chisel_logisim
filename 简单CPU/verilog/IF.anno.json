@@ -1,0 +1,23 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.annotations.LoadMemoryAnnotation",
+    "target":"IF.IF.mem",
+    "fileName":"src/loong/loong_core1.hex",
+    "hexOrBinary":"h",
+    "originalMemoryNameOpt":"mem"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"verilog"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"IF.IF",
+    "name":"IF.IF.mem.v",
+    "text":"module BindsTo_0_IF(\n  input         clock,\n  input         reset,\n  input         io_stallStageIF,\n  input  [31:0] io_branchTarget_ID,\n  input         io_branchFlag_ID,\n  input         io_reset,\n  output [31:0] io_PC_IF,\n  output [31:0] io_instr_IF\n);\n\ninitial begin\n  $readmemh(\"src/loong/loong_core1.hex\", IF.mem);\nend\n                      endmodule\n\nbind IF BindsTo_0_IF BindsTo_0_IF_Inst(.*);"
+  }
+]

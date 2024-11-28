@@ -1,0 +1,19 @@
+[
+  {
+    "class":"firrtl.EmitCircuitAnnotation",
+    "emitter":"firrtl.VerilogEmitter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxTargetDirAnno",
+    "targetDir":"verilog"
+  },
+  {
+    "class":"firrtl.transforms.CombinationalPath",
+    "sink":"~EXE|EXE>io_aluResult_EXE",
+    "sources":[
+      "~EXE|EXE>io_aluOP_ctrl_uEXE_EXE",
+      "~EXE|EXE>io_data1_EXE",
+      "~EXE|EXE>io_data2_EXE"
+    ]
+  }
+]
